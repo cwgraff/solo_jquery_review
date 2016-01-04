@@ -17,14 +17,11 @@ $.ajax('data.json').then(function(response){
 
         //console.log(firstName);
 
-        $('.appendHere').append("<br/><br/>ID #" + id + "<br/>Gender: " + gender + "<br/>Name: " + firstName + " " + lastName + "<br/>E-Mail: " + eMail);
-
+        if(!eMail) {
+            $('.appendHere').append("<br/><br/>ID #" + id + "<br/>Gender: " + gender + "<br/>Name: " + firstName + " " + lastName);
+        }
+        else {
+            $('.appendHere').append("<br/><br/>ID #" + id + "<br/>Gender: " + gender + "<br/>Name: " + firstName + " " + lastName + "<br/>E-Mail: " + eMail);
+        }
     }
-
-
-
-}
-
-
-
-);
+});
